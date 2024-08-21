@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAPI Detallada</title>
+    <script src="styles.css"></script>
+</head>
+<body>
+    <header>
+        <h1>Explora el Universo de Star Wars</h1>
+        <input type="text" id="busqueda" placeholder="Buscar...">
+    </header>
+    <nav>
+        <button onclick="mostrarSeccion('personajes')">Personajes</button>
+        <button onclick="mostrarSeccion('planetas')">Planetas</button>
+        <button onclick="mostrarSeccion('naves')">Naves Estelares</button>
+    </nav>
+    <section id="personajes">
+        <h2>Personajes</h2>
+        <ul id="listaPersonajes"></ul>
+    </section>
+    <section id="planetas">
+        <h2>Planetas</h2>
+        <ul id="listaPlanetas"></ul>
+    </section>
+    <section id="naves">
+        <h2>Naves Estelares</h2>
+        <ul id="listaNaves"></ul>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
