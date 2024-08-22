@@ -20,94 +20,106 @@ async function obtenerDatos(recurso) {
 // Función para mostrar los personajes
 async function mostrarPersonajes(filtro = '') {
     const datos = await obtenerDatos('people');
-    const listaPersonajes = document.getElementById('listaPersonajes');
-    listaPersonajes.innerHTML = '';
+    const personajescontainer = document.querySelector('.container-personajes');
+    personajescontainer.innerHTML = '';
     datos
         .filter(personaje => personaje.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(personaje => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Nombre:</strong> ${personaje.name}<br>
-                <strong>Altura:</strong> ${personaje.height} cm<br>
-                <strong>Peso:</strong> ${personaje.mass} kg<br>
+            const card = document.createElement('div');
+            card.className="card"
+            card.innerHTML = `
+            <div class="content">
                 <img src="https://starwars-visualguide.com/assets/img/characters/${obtenerId(personaje.url)}.jpg" alt="${personaje.name}">
-            `;
-            listaPersonajes.appendChild(li);
+                <p>Nombre:</p> ${personaje.name}<br>
+                <p>Altura:</p> ${personaje.height} cm<br>
+                <p>Peso:</p> ${personaje.mass} kg<br>
+            </div>`;
+            personajescontainer.appendChild(card);
         });
 }
 
 // Función para mostrar los planetas
 async function mostrarPlanetas(filtro = '') {
     const datos = await obtenerDatos('planets');
-    const listaPlanetas = document.getElementById('listaPlanetas');
-    listaPlanetas.innerHTML = '';
-    datos
+    const planetascontainer = document.querySelector('.container-planetas');
+    planetascontainer.innerHTML = '';
+    datos.results
         .filter(planeta => planeta.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(planeta => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Nombre:</strong> ${planeta.name}<br>
-                <strong>Clima:</strong> ${planeta.climate}<br>
-                <strong>Terreno:</strong> ${planeta.terrain}<br>
-                <img src="https://starwars-visualguide.com/assets/img/planets/${obtenerId(planeta.url)}.jpg" alt="${planeta.name}">
-            `;
-            listaPlanetas.appendChild(li);
+            const card = document.createElement("div");
+            card.className = "card"
+            card.innerHTML = `
+            <div class="content">
+            <img src="https://starwars-visualguide.com/assets/img/planets/${obtenerId(planeta.url)}.jpg" alt="${planeta.name}">
+                <p>Nombre:</p> ${planeta.name}
+                <p>Clima:</p> ${planeta.climate}
+                <p>Terreno:</p> ${planeta.terrain}
+            </div>
+                `;
+            planetascontainer.appendChild(card);
         });
 }
 
 // Función para mostrar las naves estelares
 async function mostrarNaves(filtro = '') {
     const datos = await obtenerDatos('starships');
-    const listaNaves = document.getElementById('listaNaves');
-    listaNaves.innerHTML = '';
-    datos
+    const navescontainer = document.querySelector('.container-naves');
+    navescontainer.innerHTML = '';
+    datos.results
         .filter(nave => nave.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(nave => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Nombre:</strong> ${nave.name}<br>
-                <strong>Modelo:</strong> ${nave.model}<br>
-                <strong>Fabricante:</strong> ${nave.manufacturer}<br>
+            const card = document.createElement('div');
+            card.className = "card"
+            card.innerHTML = `
+            <div class="content ">
                 <img src="https://starwars-visualguide.com/assets/img/starships/${obtenerId(nave.url)}.jpg" alt="${nave.name}">
-            `;
-            listaNaves.appendChild(li);
+                <p>Nombre:</p> ${nave.name}
+                <p>Modelo:</p> ${nave.model}
+                <p>Fabricante:</p> ${nave.manufacturer}
+                </div>`;
+            navescontainer.appendChild(card);
         });
 }
 
 //funcion para mostrar los vehiculos 
 async function mostrarVehiculos(filtro = '') {
     const datos = await obtenerDatos('vehicles');
-    const listaVehiculos = document.getElementById('listaVehiculos');
-    listaVehiculos.innerHTML = '';
+    const vehiculoscontainer = document.querySelector('.container-vehiculos');
+    vehiculoscontainer.innerHTML = '';
     datos
         .filter(vehiculo => vehiculo.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(vehiculo => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Nombre:</strong> ${vehiculo.name}<br>
-                <strong>Modelo:</strong> ${vehiculo.model}<br>
-                <strong>Fabricante:</strong> ${vehiculo.manufacturer}<br>
+            const card = document.createElement('div');
+            card.className = "card"
+            card.innerHTML = `
+            <div class= "content"
                 <img src="https://starwars-visualguide.com/assets/img/vehicles/${obtenerId(vehiculo.url)}.jpg" alt="${vehiculo.name}">
-            `;
-            listaVehiculos.appendChild(li);
+                <p>Nombre:</p> ${vehiculo.name}
+                <p>Modelo:</p> ${vehiculo.model}
+                <p>Fabricante:</p> ${vehiculo.manufacturer}
+            </div>
+                `;
+            vehiculoscontainer.appendChild(card);
         });
 }
 //funcion para mostrar las especies 
 async function mostrarEspecies(filtro = '') {
     const datos = await obtenerDatos('species');
-    const listaEspecies = document.getElementById('listaEspecies');
-    listaEspecies.innerHTML = '';
+    const especiescontainer = document.querySelector('.container-especies');
+    especiescontainer.innerHTML = '';
     datos
         .filter(especie => especie.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(especie => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Nombre:</strong> ${especie.name}<br>
-                <strong>Clasificación:</strong> ${especie.classification}<br>
-                <strong>Designación:</strong> ${especie.designation}<br>
-                <img src="https://starwars-visualguide.com/assets/img/species/${obtenerId(especie.url)}.jpg" alt="${especie.name}">
-            `;
-            listaEspecies.appendChild(li);
+            const card = document.createElement('div');
+            card.className = "card"
+            card.innerHTML = `
+            <div class="content">
+            <img src="https://starwars-visualguide.com/assets/img/species/${obtenerId(especie.url)}.jpg" alt="${especie.name}">
+                <p>Nombre:</p> ${especie.name}
+                <p>Clasificación:</p> ${especie.classification}
+                <p>Designación:</p> ${especie.designation}
+            </div>`;
+            especiescontainer.appendChild(card);
         });
 }
 
@@ -115,20 +127,23 @@ async function mostrarEspecies(filtro = '') {
 
 async function mostrarPeliculas(filtro = '') {
     const datos = await obtenerDatos('films');
-    const listaPeliculas = document.getElementById('listaPeliculas');
-    listaPeliculas.innerHTML = '';
+    const peliculascontainer = document.querySelector('.container-peliculas');
+    peliculascontainer.innerHTML = '';
     datos
         .filter(pelicula => pelicula.title.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(pelicula => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <strong>Título:</strong> ${pelicula.title}<br>
-                <strong>Director:</strong> ${pelicula.director}<br>
-                <strong>Productor:</strong> ${pelicula.producer}<br>
-                <strong>Fecha de estreno:</strong> ${pelicula.release_date}<br>
+            const card = document.createElement('div');
+            card.className = "card"
+            card.innerHTML = `
+            <div class="content">
                 <img src="https://starwars-visualguide.com/assets/img/films/${obtenerId(pelicula.url)}.jpg" alt="${pelicula.title}">
-            `;
-            listaPeliculas.appendChild(li);
+                <p>Título:</p> ${pelicula.title}
+                <p>Director:</p> ${pelicula.director}
+                <p>Productor:</p> ${pelicula.producer}
+                <p>Fecha de estreno:</p> ${pelicula.release_date}
+            </div>
+                `;
+            peliculascontainer.appendChild(card);
         });
 }
 
@@ -137,7 +152,7 @@ async function mostrarPeliculas(filtro = '') {
 function mostrarSeccion(seccion) {
     const secciones = document.querySelectorAll('section');
     secciones.forEach(sec => {
-        sec.style.display = sec.id === seccion ? 'block' : 'none';
+        sec.style.display = sec.id === seccion ? 'flex' : 'none';
     });
     switch (seccion) {
         case 'personajes':

@@ -4,46 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWAPI Detallada</title>
-    <script src="styles.css"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Explora el Universo de Star Wars</h1>
-        <input type="text" id="busqueda" placeholder="Buscar...">
+        <div class="container-header">
+            <div class="header-left">
+              <h1>Explora el Universo de Star Wars</h1>
+            </div>
+            <div class="header-right">
+              <input type="text" id="busqueda" placeholder="Buscar..." />
+              <input class="btn" type="submit">
+            </div>
+        </div> 
     </header>
         <nav>
-            <button onclick="mostrarSeccion('personajes')">Personajes</button>
-            <button onclick="mostrarSeccion('planetas')">Planetas</button>
-            <button onclick="mostrarSeccion('naves')">Naves Estelares</button>
-            <button onclick="mostrarSeccion('vehiculos')">Vehículos</button>
-            <button onclick="mostrarSeccion('especies')">Especies</button>
-            <button onclick="mostrarSeccion('peliculas')">Películas</button>
+            <button class="btn" onclick="mostrarSeccion('personajes')">Personajes</button>
+            <button class="btn" onclick="mostrarSeccion('planetas')">Planetas</button>
+            <button class="btn" onclick="mostrarSeccion('naves')">Naves Estelares</button>
+            <button class="btn" onclick="mostrarSeccion('vehiculos')">Vehículos</button>
+            <button class="btn" onclick="mostrarSeccion('especies')">Especies</button>
+            <button class="btn" onclick="mostrarSeccion('peliculas')">Películas</button>
         </nav>
-        <section id="personajes">
+        <section  class="container-personajes" id="personajes">
             <h2>Personajes</h2>
-            <ul id="listaPersonajes"></ul>
-        </section>
-        <section id="planetas">
+          </section>
+        <section class="container-planetas" id="planetas">
             <h2>Planetas</h2>
-            <ul id="listaPlanetas"></ul>
-        </section>
-        <section id="naves">
+          </section>
+        <section class="container-naves" id="naves">
             <h2>Naves Estelares</h2>
-            <ul id="listaNaves"></ul>
-        </section>
-        <section id="vehiculos">
+          </section>
+        <section class="container-vehiculos" id="vehiculos">
             <h2>Vehículos</h2>
-            <ul id="listaVehiculos"></ul>
         </section>
-        <section id="especies">
+        <section class="container-especies" id="especies">
             <h2>Especies</h2>
-            <ul id="listaEspecies"></ul>
         </section>
-        <section id="peliculas">
+        <section class="container-peliculas"  id="peliculas">
             <h2>Películas</h2>
-            <ul id="listaPeliculas"></ul>
         </section>
-
     <script src="app.js"></script>
 </body>
 </html>
