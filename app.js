@@ -43,7 +43,7 @@ async function mostrarPlanetas(filtro = '') {
     const datos = await obtenerDatos('planets');
     const planetascontainer = document.querySelector('.container-planetas');
     planetascontainer.innerHTML = '';
-    datos.results
+    datos
         .filter(planeta => planeta.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(planeta => {
             const card = document.createElement("div");
@@ -65,7 +65,7 @@ async function mostrarNaves(filtro = '') {
     const datos = await obtenerDatos('starships');
     const navescontainer = document.querySelector('.container-naves');
     navescontainer.innerHTML = '';
-    datos.results
+    datos
         .filter(nave => nave.name.toLowerCase().includes(filtro.toLowerCase()))
         .forEach(nave => {
             const card = document.createElement('div');
