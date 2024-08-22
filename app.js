@@ -1,5 +1,30 @@
 const urlBase = 'https://swapi.dev/api/';
 
+
+function filterProducts() {
+    // Obtener el valor del campo de búsqueda
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Identificar la sección visible
+    const seccionVisible = document.querySelector('section[style="display: flex;"]');
+    if (seccionVisible) {
+        // Obtener todas las tarjetas (productos) dentro de la sección visible
+        const cards = seccionVisible.querySelectorAll('.card');
+        
+        // Recorrer cada tarjeta y verificar si coincide con la búsqueda
+        cards.forEach(function(card) {
+            const productName = card.textContent.toLowerCase();
+            
+            // Si el nombre incluye el texto de búsqueda, mostrar la tarjeta; de lo contrario, ocultarla
+            if (productName.includes(searchValue)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+}
+
 // Función para obtener todos los datos con paginación
 async function obtenerDatos(recurso) {
     let datosCompletos = [];
@@ -30,6 +55,7 @@ async function mostrarPersonajes(filtro = '') {
             card.innerHTML = `
             <div class="content">
                 <img src="https://starwars-visualguide.com/assets/img/characters/${obtenerId(personaje.url)}.jpg" alt="${personaje.name}">
+                <p>Genero:</p> ${personaje.gender}<br>
                 <p>Nombre:</p> ${personaje.name}<br>
                 <p>Altura:</p> ${personaje.height} cm<br>
                 <p>Peso:</p> ${personaje.mass} kg<br>
