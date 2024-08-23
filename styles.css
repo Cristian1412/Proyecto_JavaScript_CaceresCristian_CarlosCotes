@@ -7,7 +7,7 @@ header{
   flex-direction: column;
   align-items: center;
   img{
-    width: 15vw;
+    width: 30vw;
   }
   .container-bsc{
     width: 100%;
@@ -104,7 +104,7 @@ main{
   
 .card {
   border: #05183c solid;
-  width: 25%;
+  width: 50%;
   margin: 2%;
 }
 .card:hover {
@@ -129,7 +129,68 @@ main{
     
   }
 }
-
-@media screen {
-  
+@media (min-width: 700px) {
+  .card {
+    width: 40%;
+  .content {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 50%;
+      height: 25%;
+    }
+  }
 }
+}
+@media (min-width: 1000px) {
+
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+      width: 15vw;
+    }
+    .container-bsc{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      .bsc{
+        cursor: pointer;
+        border: mone;
+        width: 70%;
+        background-color:#05183c;
+  
+      }
+    }
+  }
+  .btn {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color:#05183c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  .card {
+    width: 25%;
+  .content {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 50%;
+      height: 25%;
+    }
+  }
+}
+}
+
