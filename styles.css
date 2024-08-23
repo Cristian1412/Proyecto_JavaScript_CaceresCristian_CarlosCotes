@@ -1,44 +1,47 @@
 :root {
-  background-image: linear-gradient(to bottom,  #000000, #05183c);
+  background-color: black;
   color: white;
 }
-.container-header {
+header{
   display: flex;
-  justify-content: space-between;
-  .header-left {
-    display: flex;
-    width: 50%;
-    h1{
-        color: #fff;
-    }
+  flex-direction: column;
+  align-items: center;
+  img{
+    width: 15vw;
   }
-  .header-right {
-    justify-content: end;
-    align-items: center;
+  .container-bsc{
+    width: 100%;
     display: flex;
-    width: 50%;
-    #busqueda {
-      height: 50%;
+    justify-content: center;
+    margin-bottom: 5%;
+    .bsc{
+      cursor: pointer;
+      border: mone;
       width: 50%;
+      background-color:#05183c;
+
     }
   }
 }
 nav{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .btn {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color:#05183c   ;
+    background-color:#05183c;
     border: none;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+main{
+  display: flex;
 }
 .btn:hover{
     background-color: #1a3c7d;
@@ -100,15 +103,17 @@ nav{
   }
   
 .card {
-    width: 25%;
+  border: #05183c solid;
+  width: 25%;
   margin: 2%;
 }
 .card:hover {
-    border-radius: 5%;
-    opacity: 0.5;
+  border-radius: 5%;
+  opacity: 0.5;
   box-shadow: 0 2px 15px 2px #fff;
   transform: translateY(0);
   background-color: #1a3c7d;
+
 }
 .content {
   justify-content: center;
@@ -123,4 +128,8 @@ nav{
     color: red;
     
   }
+}
+
+@media screen {
+  
 }
