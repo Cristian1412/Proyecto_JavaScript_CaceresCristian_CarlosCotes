@@ -19,6 +19,7 @@ header{
       border: mone;
       width: 50%;
       background-color:#05183c;
+      color: white;
 
     }
   }
@@ -178,7 +179,11 @@ main{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
+
+
+
   .card {
     width: 25%;
   .content {
