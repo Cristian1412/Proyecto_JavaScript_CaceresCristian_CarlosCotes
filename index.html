@@ -8,15 +8,15 @@
 </head>
 <body>
     <header>
-
-        <input type="text" id="searchInput" placeholder="Buscar en la sección actual..." onkeyup="filterProducts()">
-        
         <div class="container-header">
             <div class="header-left">
-                <h1>Explora el Universo de Star Wars</h1>
+                <h1>SAWARAPI</h1>
             </div>
-            
         </div> 
+        <img src="./img/pngwing.com.png" alt="">
+        <div class="container-bsc">
+        <input class="bsc" type="text" id="searchInput" placeholder="Buscar" onkeyup="filterProducts()">
+        </div>    
     </header>
         <nav>
             <button class="btn" onclick="mostrarSeccion('personajes')">Personajes</button>
@@ -26,6 +26,7 @@
             <button class="btn" onclick="mostrarSeccion('especies')">Especies</button>
             <button class="btn" onclick="mostrarSeccion('peliculas')">Películas</button>
         </nav>
+        <main>
         <section  class="container-personajes" id="personajes">
             <h2>Personajes</h2>
           </section>
@@ -44,6 +45,7 @@
         <section class="container-peliculas"  id="peliculas">
             <h2>Películas</h2>
         </section>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>
