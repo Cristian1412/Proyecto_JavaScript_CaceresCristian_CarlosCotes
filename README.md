@@ -1,7 +1,7 @@
 # SAWARAPI
 
 ### Descripcion
-
+Este proyecto es una página web que consume la API pública de Star Wars (SWAPI). Permite visualizar personajes, planetas, especies, películas, naves y vehículos del universo de Star Wars. Además, incluye un buscador que filtra la información en tiempo real según lo que el usuario escriba.
 ***
 ## Tabla de contenido
 | Indice |  |
