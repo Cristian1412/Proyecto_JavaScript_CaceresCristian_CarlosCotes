@@ -40,7 +40,7 @@ Este proyecto es una página web que consume la API pública de Star Wars (SWAPI
 >
 >* [JAVASCRIPT](JS): Version ECMAScript 6+
 >
->* [API](SWAPI)
+>* [API](SWAPI): SWAPI
 >
 ***
 > [!WARNING]  
